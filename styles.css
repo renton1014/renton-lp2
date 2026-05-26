@@ -122,8 +122,8 @@ textarea {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(330px, 0.72fr);
-  gap: clamp(34px, 6vw, 78px);
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr);
+  gap: clamp(32px, 5vw, 64px);
   align-items: center;
   width: min(1160px, calc(100% - 32px));
   margin: 0 auto;
@@ -213,22 +213,39 @@ textarea {
 .hero-card {
   display: grid;
   gap: 14px;
+  width: min(100%, 300px);
+  justify-self: center;
+}
+
+.profile-badge {
+  align-self: center;
 }
 
 .portrait {
   overflow: hidden;
+  width: 180px;
+  height: 180px;
+  justify-self: center;
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 50%;
   box-shadow: var(--shadow);
 }
 
-.portrait img,
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 35%;
+  padding: 0;
+  filter: saturate(0.94) contrast(0.98) brightness(1.02);
+}
+
 .profile-image img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: 58% 44%;
+  object-position: 58% 38%;
   padding: 0;
   filter: saturate(0.94) contrast(0.98) brightness(1.02);
 }
@@ -236,7 +253,7 @@ textarea {
 .role-card {
   display: grid;
   gap: 6px;
-  padding: 18px;
+  padding: 20px;
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -290,6 +307,10 @@ textarea {
 .section-heading {
   max-width: 760px;
   margin-bottom: 34px;
+}
+
+.section-heading h2 {
+  max-width: 14em;
 }
 
 .section-heading h2,
@@ -392,13 +413,14 @@ textarea {
 
 .profile {
   display: grid;
-  grid-template-columns: minmax(280px, 0.42fr) minmax(0, 0.58fr);
+  grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr);
   gap: clamp(34px, 6vw, 72px);
   align-items: center;
 }
 
 .profile-image {
   overflow: hidden;
+  width: min(100%, 320px);
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -430,7 +452,7 @@ textarea {
 
 .contact {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(340px, 1.12fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
   gap: 36px;
   width: min(1160px, calc(100% - 32px));
   margin: 0 auto 52px;
@@ -445,6 +467,10 @@ textarea {
 .contact .eyebrow,
 .contact p {
   color: var(--muted);
+}
+
+.contact-copy h2 {
+  max-width: 520px;
 }
 
 .contact-form {
@@ -614,6 +640,26 @@ textarea {
     padding: 42px 0 42px;
   }
 
+  .hero-card {
+    width: min(100%, 100%);
+    justify-self: center;
+  }
+
+  .profile-badge {
+    grid-template-columns: 92px 1fr;
+    align-items: center;
+    width: 100%;
+  }
+
+  .portrait {
+    width: 92px;
+    height: 92px;
+  }
+
+  .role-card {
+    padding: 16px;
+  }
+
   .hero h1 {
     font-size: clamp(2.15rem, 9vw, 2.8rem);
     line-height: 1.28;
@@ -640,9 +686,13 @@ textarea {
     width: 100%;
   }
 
-  .portrait img,
   .profile-image img {
-    object-position: 58% 44%;
+    object-position: 58% 38%;
+  }
+
+  .profile-image {
+    width: min(100%, 260px);
+    justify-self: center;
   }
 
   .proof-band {
@@ -664,6 +714,14 @@ textarea {
   .contact h2 {
     font-size: clamp(1.55rem, 6.6vw, 2.1rem);
     line-height: 1.36;
+  }
+
+  .section-heading h2 {
+    max-width: 11em;
+  }
+
+  .contact-copy h2 {
+    max-width: 12em;
   }
 
   .audience-grid,
